@@ -7,8 +7,8 @@
         <!-- deletestyle -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/destyle.css@1.0.15/destyle.css"/>
 
-        <!-- favicon -->
-        <link rel="icon" href="./favicon.png">
+         <!-- favicon -->
+         <link rel="icon" href="./favicon.png">
 
          <!-- bootstrap -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -39,7 +39,7 @@
                 </a>
     
                 <a href="https://google.com" style="text-decoration: none;">
-                    <div class="sidebar-item-text sidebar-item sidebar-item w-100 m-0">クイズアプリ</div>
+                    <div class="sidebar-item-text sidebar-item sidebar-item-checked w-100 m-0">クイズアプリ</div>
                 </a>
     
                 <a href="https://google.com" style="text-decoration: none;">
@@ -47,8 +47,9 @@
                 </a>
     
                 <a href="typing.html" style="text-decoration: none;">
-                    <div class="sidebar-item-text sidebar-item-checked w-100 m-0">タイピングゲーム</div>
+                    <div class="sidebar-item-text sidebar-item w-100 m-0">タイピングゲーム</div>
                 </a>
+    
     
                 <footer class="text-center position-absolute bottom-0 w-100">
                     <div class="allPts">
@@ -65,17 +66,27 @@
     
     
             <div class="typing-game w-100 h-100">
-                <h1>タイピングゲーム</h1>
-                <!-- ゲーム画面に行く -->
-                <button type="button" class="btn btn-light" onclick="location.href='./typing-play.html?select=1'" value="start">スタート！</button>
+                <table>
+                    <tr><th colspan="2">結果</th></tr>
+                    <tr><td>Score</td><td id=score>score</td></tr>
+                    <tr><td>Level</td><td id="level">level</td></tr>
+                    <tr><td>経過時間</td><td id="time">time</td></tr>
+                    <tr><td>正解数</td><td id="Q_it">it</td></tr>
+                    <tr><td>間違えた数</td><td id="Q_mt">miss</td></tr>
+                    <tr><td>WPM</td><td id="wpm">wpm</td></tr>
+                    <tr><td>正確性</td><td id="accuracy">accuracy</td></tr>
+                </table>
+                <button type="button" class="btn btn-light" onclick="location.href=document.referrer" value="start">もう一回！</button>
+                <!--<button type="button" class="btn btn-light" onclick="location.href='./typing-play.html'" value="start">もう一回！</button>-->
+                
+                <button id="btn-screenshot" class="btn btn-light">スクショ</button>
                 <br>
-                レベル:
-                <input type="radio" name="select" value="1" checked>1
-                <input type="radio" name="select" value="2">2
-                <input type="radio" name="select" value="3">3
+                <!-- twitter -->
+                <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false" data-text="タイピングしました！" data-size="large">Tweet</a>
             </div>
         </main>
 
-        <script src="js/typing.js"></script>
+        <script src="js/typing-result.js"></script>
+        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     </body>
 </html>
