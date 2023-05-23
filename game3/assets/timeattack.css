@@ -1,0 +1,27 @@
+body {
+    text-align: center;
+    background: #D6E1FF;
+}
+
+.table {
+    text-align: center;
+    margin: 0 auto;
+    width: 40%;
+    font-size: 120%;
+
+    background-color: #d9d9d9;
+}
+
+.timer {
+    text-align: center;
+    padding: 10px;
+    margin: auto;
+    width: 50%;
+    font-size: 150%;
+
+    background-color: #d9d9d9;
+}
+
+.setsumei{
+    margin: 2px 3px 4px;
+}
