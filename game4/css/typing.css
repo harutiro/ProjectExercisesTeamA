@@ -1,0 +1,43 @@
+.typing-game {
+    text-align: center;
+    margin: 0px 0px auto 250px;
+}
+
+/* 上、左右、下のmarginを個別に指定 */
+table {
+    margin: 200px auto 0px;
+}
+
+
+/* デフォルトサイズ */
+html {
+    font-size: 100%;
+}
+
+/* デフォルトサイズのn倍 */
+.text {
+    font-size: 3rem;
+    margin-top: 200px;
+}
+
+h1 {
+    font-size: 4rem;
+    margin-top: 200px;
+}
+
+button {
+    font-size: 2rem;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+td {
+    font-size: 2rem;
+    border: 2px solid rgb(81, 0, 255);
+}
+
+th {
+    font-size: 2rem;
+    border: 2px solid rgb(81, 0, 255);
+}
+
