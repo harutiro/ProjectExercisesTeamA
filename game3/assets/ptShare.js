@@ -29,6 +29,7 @@
 // * 引数：webStorageアクセスキー、返り値：共有スコア配列
 // * localStorage領域から共有スコア配列を取得
 // * 共有中の得点全てを取得するため、データ取り扱いに注意のこと
+// * e.g.) let ptArr = getLS('pts');
 
 const quiz = document.getElementById('quiz');
 const janken = document.getElementById('jnkn');
