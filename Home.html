@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <title>WordList</title>
+
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+
+    <!-- myCSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Favicon -->
+    <link rel="icon" href="/Home.png">
+
+    <script src="script.js"></script>
+
+</head>
+
+<body class="min-vh-100">
+
+    <main class="main d-flex flex-row min-vh-100 min-vw-100">
+        <aside class="sidebar text-white p-0">
+
+            <nav>
+                <br>
+                <a class="text-white h2 mb-3 p-4">Hand & Hand</あ>
+            </nav>
+
+            <a href="./game1/jannkenn.html" style="text-decoration: none;">
+                <div class="sidebar-item-text sidebar-item w-100 m-0">じゃんけんゲーム</div>
+            </a>
+
+            <a href="./game2/quiz.html" style="text-decoration: none;">
+                <div class="sidebar-item-text sidebar-item w-100 m-0">クイズアプリ</div>
+            </a>
+
+            <a href="./game3/quick_press.html" style="text-decoration: none;">
+                <div class="sidebar-item-text sidebar-item w-100 m-0">早押しゲーム</div>
+            </a>
+
+            <a href="./game4/typing.html" style="text-decoration: none;">
+                <div class="sidebar-item-text sidebar-item w-100 m-0">タイピングゲーム</div>
+            </a>
+
+            <div class="sidebar-item-text sidebar-item w-100 m-0">
+                <text id="score">10ポイント</text>
+            </div>
+
+
+            <footer class="text-center position-absolute bottom-0 w-100">
+                <p>@チームA</p>
+            </footer>
+        </aside>
+
+
+        <div class="todo-list w-100 h-100">
+            <!-- ここに書いていく -->
+            <div class="center">
+                <button id="janken" class="btn btn-primary over" onclick="location.href='./game1/jannkenn.html'">じゃんけんゲーム</button>
+                <button id="quiz" class="btn btn-primary over" onclick="location.href='./game2/quiz.html'">クイズアプリ</button>
+            </div>
+            <div class="center">
+                <button id="quick_press" class="btn btn-primary under" onclick="location.href='./game3/quick_press.html'">早押しゲーム</button>
+                <button id="typing" class="btn btn-primary under" onclick="location.href='./game4/typing.html'">タイピングゲーム</button>
+            </div>
+            
+        </div>
+    </main>
+</body>
+
+</html>
