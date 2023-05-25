@@ -46,8 +46,8 @@
                     <div class="sidebar-item-text sidebar-item w-100 m-0">早押しゲーム</div>
                 </a>
     
-                <a href="../game4/typing.html" style="text-decoration: none;">
-                    <div class="sidebar-item-text sidebar-item-checked w-100 m-0">タイピングゲーム</div>
+                <a href="typing.html" style="text-decoration: none;">
+                    <div class="sidebar-item-text sidebar-item sidebar-item-checked w-100 m-0">タイピングゲーム</div>
                 </a>
     
                 <footer class="text-center position-absolute bottom-0 w-100">
@@ -66,13 +66,19 @@
     
             <div class="typing-game w-100 h-100">
                 <h1>タイピングゲーム</h1>
-                <!-- ゲーム画面に行く -->
-                <button type="button" class="btn btn-light" onclick="location.href='./typing-play.html?select=1'" value="start">スタート！</button>
-                <br>
-                レベル:
-                <input type="radio" name="select" value="1" checked>1
-                <input type="radio" name="select" value="2">2
-                <input type="radio" name="select" value="3">3
+
+                <div id="difficulty">
+                    <p>難易度</p>
+                    <button type="button" class="btn btn-light" onclick="location.href='./typing-play.html?select=1'" value="start">1</button>
+                    <button type="button" class="btn btn-light" onclick="location.href='./typing-play.html?select=2'" value="start">2</button>
+                    <button type="button" class="btn btn-light" onclick="location.href='./typing-play.html?select=3'" value="start">3</button>
+                    <button type="button" class="btn btn-light" onclick="location.href='./typing-play.html?select=4'" value="start">4</button>
+                    <button type="button" class="btn btn-light" onclick="location.href='./typing-play.html?select=5'" value="start">5</button>
+                    <button type="button" class="btn btn-light" onclick="location.href='./typing-play.html?select=6'" value="start">6</button>
+                    <button type="button" class="btn btn-light" onclick="location.href='./typing-play.html?select=7'" value="start">7</button>
+                    <button type="button" class="btn btn-light" onclick="location.href='./typing-play.html?select=8'" value="start">8</button>
+                </div>
+
             </div>
         </main>
 

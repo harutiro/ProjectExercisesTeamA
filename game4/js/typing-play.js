@@ -8,15 +8,30 @@ let params = url.searchParams;// URLSearchParamsオブジェクトを取得
 const select = params.get('select');
 let Q;//問題文
 let Q_Num; //問題数
-if(select == 1){
-    Q = ["apple","banana","melon","mango","strawberry","blueberry","orange"];
+if(select == 1){ //三文字
+    Q = ["key","bit","let","bug","fix","log","row","tab","tag","zip","jpg","css","img","png","mp3","add","run","use","app","cmd","dir","doc","err","int","max","min","num","obj","tmp","val","mac","rgb","ssh","sql","url"];
     Q_Num = 10;
 } else if(select == 2){
-    Q = ["apple","banana","melon","mango","strawberry","blueberry","orange"];
-    Q_Num = 30;
-} else if(select == 3){
-    Q = ["apple","banana","melon","mango","strawberry","blueberry","orange"];
-    Q_Num = 50;
+    Q = ["key","bit","let","bug","fix","log","row","tab","tag","zip","jpg","css","img","png","mp3","add","run","use","app","cmd","dir","doc","err","int","max","min","num","obj","tmp","val","mac","rgb","ssh","sql","url"];
+    Q_Num = 20;
+} else if(select == 3){ //四文字
+    Q = ["byte","code","data","exit","fail","file","font","icon","item","link","node","none","null","path","push","root","scan","sort","type","warn","bump","fire","hack","hash","load","typo","todo","body","head","call","form","list","menu","name","play","char","ctrl","diff","init","prev","repo","temp","html","http","json","java","bool"];
+    Q_Num = 10;
+} else if(select == 4){
+    Q = ["byte","code","data","exit","fail","file","font","icon","item","link","node","none","null","path","push","root","scan","sort","type","warn","bump","fire","hack","hash","load","typo","todo","body","head","call","form","list","menu","name","play","char","ctrl","diff","init","prev","repo","temp","html","http","json","java","bool"];
+    Q_Num = 20;
+} else if(select == 5){ //五文字、六文字
+    Q = ["action","below","break","build","child","button","class","close","false","finish","number","return","parent","style","useful","window","async","config","param","params","https","double","false","float","global","import","module","native","return","sizeof","static","string","struct","switch","typeof","array","apply","cancel","click","cookie","cursor","debug","delete","dialog","domain","folder","format","global","issue","label","layout","length","level","local","login","memory","module","option","output","popup","range","remove","reset","script","server","system","clone"];
+    Q_Num = 10;
+} else if(select == 6){
+    Q = ["action","below","break","build","child","button","class","close","false","finish","number","return","parent","style","useful","window","async","config","param","params","https","double","false","float","global","import","module","native","return","sizeof","static","string","struct","switch","typeof","array","apply","cancel","click","cookie","cursor","debug","delete","dialog","domain","folder","format","global","issue","label","layout","length","level","local","login","memory","module","option","output","popup","range","remove","reset","script","server","system","clone"];
+    Q_Num = 20;
+} else if(select == 7){ //七文字以上
+    Q = ["address","complete","information","language","password","product","software","website","JavaScript","boolean","checked","continue","debugger","function","include","operator","private","protected","algorithm","application","argument","character","checkbox","clipboard","collection","command","configuration","connection","console","continue","dashboard","database","default","developer","directory","documentation","download","element","function","hardware","install","integer","interface","library","network","parameter","physical","public","release","shortcut","version","binary","debugger","framework","hierarchy","initial","installation"];
+    Q_Num = 10;
+} else if(select == 8){
+    Q = ["address","complete","information","language","password","product","software","website","JavaScript","boolean","checked","continue","debugger","function","include","operator","private","protected","algorithm","application","argument","character","checkbox","clipboard","collection","command","configuration","connection","console","continue","dashboard","database","default","developer","directory","documentation","download","element","function","hardware","install","integer","interface","library","network","parameter","physical","public","release","shortcut","version","binary","debugger","framework","hierarchy","initial","installation"];
+    Q_Num = 20;
 }
 
 
