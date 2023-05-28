@@ -92,7 +92,8 @@ function push_Keydown(event){ //メインの関数
                 const accuracy = calcAccuracy(Q_it,Q_mt); //正確性
                 const score = calcScore(wpm,accuracy); //score
                 const level = calcLevel(score); //level
-                let para = "?score=" + score + "&level=" + level + "&time=" + time + "&Q_it=" + Q_it + "&Q_mt=" + Q_mt + "&wpm=" + wpm + "&accuracy=" + accuracy; //パラメータ作成
+                const point = calcPoint(score); //point
+                let para = "?score=" + score + "&level=" + level + "&point=" + point + "&time=" + time + "&Q_it=" + Q_it + "&Q_mt=" + Q_mt + "&wpm=" + wpm + "&accuracy=" + accuracy; //パラメータ作成
                 location.href = "./typing-result.html" + para; //画面遷移
             } else {
                 const word = Q[Q_No].substring(Q_i, Q_l)
@@ -101,7 +102,7 @@ function push_Keydown(event){ //メインの関数
                 const uttr = new SpeechSynthesisUtterance()
                 uttr.text = word;
                 uttr.rate = 0.9;
-                uttr.volume = 2;
+                uttr.volume = 5;
                 uttr.lang = "en-GB"//イギリス英語
                 //読み上げスタート
                 window.speechSynthesis.speak(uttr)
@@ -144,7 +145,7 @@ function calcAccuracy(right,wrong){ //正確性計算関数
 
 function calcWpm(eTime,i) { //WPM計算用関数
     let s = Math.floor((eTime % 60000) / 1000);
-    const wpm = i/s * 60;
+    const wpm = i/(s/60.0);
     return wpm.toPrecision(5);
 }
 
@@ -217,4 +218,70 @@ function calcLevel(score) { //level計算用関数
         level = "Joker";
     }
     return level;
+}
+
+function calcPoint(score) { //point計算用関数
+    let point = 0;
+    if(score <= 21){
+        point = 2;
+    } else if(score <= 38){
+        point = 2;
+    } else if(score <= 55){
+        point = 2;
+    } else if(score <= 72){
+        point = 4;
+    } else if(score <= 89){
+        point = 4;
+    } else if(score <= 106){
+        point = 4;
+    } else if(score <= 123){
+        point = 6;
+    } else if(score <= 140){
+        point = 6;
+    } else if(score <= 157){
+        point = 6;
+    } else if(score <= 174){
+        point = 8;
+    } else if(score <= 191){
+        point = 8;
+    } else if(score <= 208){
+        point = 8;
+    } else if(score <= 225){
+        point = 10;
+    } else if(score <= 242){
+        point = 10;
+    } else if(score <= 259){
+        point = 10;
+    } else if(score <= 276){
+        point = 10;
+    } else if(score <= 299){
+        point = 11;
+    } else if(score <= 324){
+        point = 12;
+    } else if(score <= 349){
+        point = 13;
+    } else if(score <= 374){
+        point = 14;
+    } else if(score <= 399){
+        point = 15;
+    } else if(score <= 449){
+        point = 16;
+    } else if(score <= 499){
+        point = 17;
+    } else if(score <= 549){
+        point = 18;
+    } else if(score <= 599){
+        point = 19;
+    } else if(score <= 649){
+        point = 20;
+    } else if(score <= 699){
+        point = 21;
+    } else if(score <= 749){
+        point = 22;
+    } else if(score <= 799){
+        point = 23;
+    } else {
+        point = 24;
+    }
+    return point;
 }
