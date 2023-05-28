@@ -23,6 +23,7 @@
     <script type="text/javascript" src="todo.js"></script>
     <script type="text/javascript" src="util/createUuid.js"></script>
     <script type="text/javascript" src="models/Word.js"></script>
+    <script type="text/javascript" src="util/ptShare.js"></script>
 
     <!-- axios -->
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
@@ -58,6 +59,13 @@
 
             <footer class="text-center position-absolute bottom-0 w-100">
                 <button id="go-to-quiz-button" class="btn btn-success mb-4">クイズスタート</button>
+                <div class="allPts">
+					<div id="quiz" class="quiz"></div><br>
+					<div id="jnkn" class="jnkn"></div><br>
+					<div id="attack" class="attack"></div><br>
+					<div id="typing" class="typing"></div><br>
+					<div id="total" class="total bold"></div><br>
+				</div>
                 <p>@チームA</p>
             </footer>
         </aside>

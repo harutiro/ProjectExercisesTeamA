@@ -204,3 +204,12 @@ li p {
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
+.allPts {
+    background-color: #90A2BF;
+}
+
+.allPts div {
+    display: inline-block;
+    margin: 10px 10px;
+}
