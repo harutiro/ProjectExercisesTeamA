@@ -1,5 +1,11 @@
 var wordList = [];
 
+document.addEventListener('DOMContentLoaded', function() {
+    // localStorageから配列を取得して表示する
+    records = getLS('attackRanking');
+    initScores();
+});
+
 // クラス
 class TodoList {
     // コンストラクタ

@@ -21,6 +21,8 @@
 
     <!-- myJS -->
     <script type="text/javascript" src="quiz.js"></script>
+    <script type="text/javascript" src="util/ptShare.js"></script>
+    
 
     <!-- axios -->
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
@@ -57,12 +59,19 @@
 
             <footer class="text-center position-absolute bottom-0 w-100">
                 <a href="./quiz.html" class="btn btn-secondary mb-4">編集に戻る</a>
+                <div class="allPts">
+					<div id="quiz" class="quiz"></div><br>
+					<div id="jnkn" class="jnkn"></div><br>
+					<div id="attack" class="attack"></div><br>
+					<div id="typing" class="typing"></div><br>
+					<div id="total" class="total bold"></div><br>
+				</div>
                 <p>@チームA</p>
             </footer>
         </aside>
 
         <div class="todo-list w-100 h-100 card p-5 mt-3 mb-3">
-            <image id="quiz-ans-image" class="quiz-ans-image" src="img/no.png"></image>
+            <image id="quiz-ans-image" class="quiz-ans-image" src=""></image>
 
             <div>
                 <p id="question-number" class="quiz-number">Q1</p>

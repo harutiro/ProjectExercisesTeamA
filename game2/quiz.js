@@ -1,5 +1,12 @@
 var wordList = [];
 let questionNumber = 0;
+let currentAnswer = 0;
+
+document.addEventListener('DOMContentLoaded', function() {
+    // localStorageから配列を取得して表示する
+    records = getLS('attackRanking');
+    initScores();
+});
 
 function fixQuestion(question) {
 
@@ -51,6 +58,7 @@ function init() {
             document.querySelector("#quiz-ans-image").src = "img/ok.png";
             const audio = new Audio('audio/ok.mp3');
             audio.play();
+            currentAnswer++;
         } else {
             document.querySelector("#quiz-ans-image").src = "img/ng.png";
             const audio = new Audio('audio/ng.mp3');
@@ -65,6 +73,7 @@ function init() {
             document.querySelector("#quiz-ans-image").src = "img/ok.png";
             const audio = new Audio('audio/ok.mp3');
             audio.play();
+            currentAnswer++;
         } else {
             document.querySelector("#quiz-ans-image").src = "img/ng.png";
             const audio = new Audio('audio/ng.mp3');
@@ -79,6 +88,7 @@ function init() {
             document.querySelector("#quiz-ans-image").src = "img/ok.png";
             const audio = new Audio('audio/ok.mp3');
             audio.play();
+            currentAnswer++;
         } else {
             document.querySelector("#quiz-ans-image").src = "img/ng.png";
             const audio = new Audio('audio/ng.mp3');
@@ -102,6 +112,12 @@ function init() {
 
             document.querySelector("#question-number").innerText = "終了";
             document.querySelector("#question-text").innerText = "お疲れ様でした\n編集に戻ります";
+
+            let ptArr = getLS('pts');
+            ptArr[1] = ptArr[1] + currentAnswer;
+            setLS('pts', ptArr);
+
+            currentAnswer = 0;
         }
     });
 
