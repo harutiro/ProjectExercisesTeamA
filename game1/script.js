@@ -1,3 +1,12 @@
+window.onload = function () {
+    let ptArr = getLS('pts');
+    if (ptArr == null) {
+        ptArr = [0, 0, 0, 0, 0, 0];
+        setLS('pts', ptArr);
+    }
+    initScores();
+}
+
 const video = document.getElementById('input');
 const canvas = document.getElementById('output');
 const ctx = canvas.getContext('2d');
@@ -182,6 +191,12 @@ document.getElementById("download").onclick = () => {
                 //element.textContent = "あなたの勝ち";
                 winCount++;
                 var newvsImgSrc = "./Img/win.png";
+
+                //Pt
+                let ptArr = getLS('pts');
+                ptArr[2] += 1;
+                setLS('pts', ptArr);
+                initScores();
             } else if (randomNumber == 2) {
                 console.log("あなたの負け");
                 //element.textContent = "あなたの負け";
@@ -204,6 +219,12 @@ document.getElementById("download").onclick = () => {
                 //element.textContent = "あなたの勝ち";
                 winCount++;
                 var newvsImgSrc = "./Img/win.png";
+
+                //Pt
+                let ptArr = getLS('pts');
+                ptArr[2] += 1;
+                setLS('pts', ptArr);
+                initScores();
             }
         } else if (num >= 4) {
             if (randomNumber == 0) {
@@ -211,6 +232,12 @@ document.getElementById("download").onclick = () => {
                 //element.textContent = "あなたの勝ち";
                 winCount++;
                 var newvsImgSrc = "./Img/win.png";
+
+                //Pt
+                let ptArr = getLS('pts');
+                ptArr[2] += 1;
+                setLS('pts', ptArr);
+                initScores();
             } else if (randomNumber == 1) {
                 console.log("あなたの負け");
                 //element.textContent = "あなたの負け";
