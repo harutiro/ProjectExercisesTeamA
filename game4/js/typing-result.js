@@ -6,6 +6,7 @@ let params = url.searchParams;// URLSearchParamsオブジェクトを取得
 //get関数で取得
 const score = params.get('score');
 const level = params.get('level'); 
+const point = params.get('point'); 
 const time = params.get('time');
 const Q_it = params.get('Q_it');
 const Q_mt = params.get('Q_mt');
@@ -15,6 +16,7 @@ const accuracy = params.get('accuracy');
 //出力
 document.getElementById("score").innerHTML = score;
 document.getElementById("level").innerHTML = level;
+document.getElementById("point").innerHTML = point + 'pt';
 document.getElementById("time").innerHTML = time;
 document.getElementById("Q_it").innerHTML = Q_it;
 document.getElementById("Q_mt").innerHTML = Q_mt;

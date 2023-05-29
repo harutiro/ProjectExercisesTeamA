@@ -3,7 +3,6 @@
     <head>
         <meta charset="UTF-8">
         <title>タイピングゲーム</title>
-        <mata name="description" content="タイピングゲーム2"></mata>
         <!-- deletestyle -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/destyle.css@1.0.15/destyle.css"/>
 
@@ -32,7 +31,7 @@
     
                 <nav>
                     <br>
-                    <a class="text-white h2 mb-3 p-4">Hand & Hand</あ>
+                    <a class="text-white h2 mb-3 p-4">Hand & Hand</a>
                 </nav>
     
                 <a href="https://google.com" style="text-decoration: none;">
@@ -40,7 +39,7 @@
                 </a>
     
                 <a href="https://google.com" style="text-decoration: none;">
-                    <div class="sidebar-item-text sidebar-item sidebar-item-checked w-100 m-0">クイズアプリ</div>
+                    <div class="sidebar-item-text sidebar-item w-100 m-0">クイズアプリ</div>
                 </a>
     
                 <a href="https://google.com" style="text-decoration: none;">
@@ -48,17 +47,17 @@
                 </a>
     
                 <a href="typing.html" style="text-decoration: none;">
-                    <div class="sidebar-item-text sidebar-item w-100 m-0">タイピングゲーム</div>
+                    <div class="sidebar-item-text sidebar-item sidebar-item-checked w-100 m-0">タイピングゲーム</div>
                 </a>
     
                 <footer class="text-center position-absolute bottom-0 w-100">
                     <div class="allPts">
                         <br>
-                        <p>クイズ：<div class="quiz"></div></p>
-                        <p>じゃんけん：<div class="jnkn"></div></p>
-                        <p>早押し：<div class="attack"></div></p>
-                        <p>タイピング：<div class="typing"></div></p>
-                        <p><b>総合得点</b>：<div class="total"></div></p>
+                        <p>クイズ：<span id="quiz"></span>pt</p>
+                        <p>じゃんけん：<span id="jnkn"></span>pt</p>
+                        <p>早押し：<span id="attack"></span>pt</p>
+                        <p>タイピング：<span id="typing"></span>pt</p>
+                        <p><b>総合得点：</b><span id="total"></span>pt</p>
                     </div>
                     <p class="copyright">@チームA</p>
                 </footer>
@@ -66,10 +65,11 @@
     
     
             <div class="typing-game w-100 h-100">
-                <p id="start" class = "text">Spaceキーを押してスタート</p>
+                <p id="start" class = "text">Spaceキーを押してスタート!</p>
             </div>
         </main>
 
+        <script src="js/ptShare.js"></script>
         <script src="js/typing-play.js"></script>
     </body>
 </html>

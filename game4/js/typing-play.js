@@ -8,15 +8,30 @@ let params = url.searchParams;// URLSearchParamsオブジェクトを取得
 const select = params.get('select');
 let Q;//問題文
 let Q_Num; //問題数
-if(select == 1){
-    Q = ["apple","banana","melon","mango","strawberry","blueberry","orange"];
+if(select == 1){ //三文字
+    Q = ["key","bit","let","bug","fix","log","row","tab","tag","zip","jpg","css","img","png","mp3","add","run","use","app","cmd","dir","doc","err","int","max","min","num","obj","tmp","val","mac","rgb","ssh","sql","url"];
     Q_Num = 10;
 } else if(select == 2){
-    Q = ["apple","banana","melon","mango","strawberry","blueberry","orange"];
-    Q_Num = 30;
-} else if(select == 3){
-    Q = ["apple","banana","melon","mango","strawberry","blueberry","orange"];
-    Q_Num = 50;
+    Q = ["key","bit","let","bug","fix","log","row","tab","tag","zip","jpg","css","img","png","mp3","add","run","use","app","cmd","dir","doc","err","int","max","min","num","obj","tmp","val","mac","rgb","ssh","sql","url"];
+    Q_Num = 20;
+} else if(select == 3){ //四文字
+    Q = ["byte","code","data","exit","fail","file","font","icon","item","link","node","none","null","path","push","root","scan","sort","type","warn","bump","fire","hack","hash","load","typo","todo","body","head","call","form","list","menu","name","play","char","ctrl","diff","init","prev","repo","temp","html","http","json","java","bool"];
+    Q_Num = 10;
+} else if(select == 4){
+    Q = ["byte","code","data","exit","fail","file","font","icon","item","link","node","none","null","path","push","root","scan","sort","type","warn","bump","fire","hack","hash","load","typo","todo","body","head","call","form","list","menu","name","play","char","ctrl","diff","init","prev","repo","temp","html","http","json","java","bool"];
+    Q_Num = 20;
+} else if(select == 5){ //五文字、六文字
+    Q = ["action","below","break","build","child","button","class","close","false","finish","number","return","parent","style","useful","window","async","config","param","params","https","double","false","float","global","import","module","native","return","sizeof","static","string","struct","switch","typeof","array","apply","cancel","click","cookie","cursor","debug","delete","dialog","domain","folder","format","global","issue","label","layout","length","level","local","login","memory","module","option","output","popup","range","remove","reset","script","server","system","clone"];
+    Q_Num = 10;
+} else if(select == 6){
+    Q = ["action","below","break","build","child","button","class","close","false","finish","number","return","parent","style","useful","window","async","config","param","params","https","double","false","float","global","import","module","native","return","sizeof","static","string","struct","switch","typeof","array","apply","cancel","click","cookie","cursor","debug","delete","dialog","domain","folder","format","global","issue","label","layout","length","level","local","login","memory","module","option","output","popup","range","remove","reset","script","server","system","clone"];
+    Q_Num = 20;
+} else if(select == 7){ //七文字以上
+    Q = ["address","complete","information","language","password","product","software","website","JavaScript","boolean","checked","continue","debugger","function","include","operator","private","protected","algorithm","application","argument","character","checkbox","clipboard","collection","command","configuration","connection","console","continue","dashboard","database","default","developer","directory","documentation","download","element","function","hardware","install","integer","interface","library","network","parameter","physical","public","release","shortcut","version","binary","debugger","framework","hierarchy","initial","installation"];
+    Q_Num = 10;
+} else if(select == 8){
+    Q = ["address","complete","information","language","password","product","software","website","JavaScript","boolean","checked","continue","debugger","function","include","operator","private","protected","algorithm","application","argument","character","checkbox","clipboard","collection","command","configuration","connection","console","continue","dashboard","database","default","developer","directory","documentation","download","element","function","hardware","install","integer","interface","library","network","parameter","physical","public","release","shortcut","version","binary","debugger","framework","hierarchy","initial","installation"];
+    Q_Num = 20;
 }
 
 
@@ -77,7 +92,8 @@ function push_Keydown(event){ //メインの関数
                 const accuracy = calcAccuracy(Q_it,Q_mt); //正確性
                 const score = calcScore(wpm,accuracy); //score
                 const level = calcLevel(score); //level
-                let para = "?score=" + score + "&level=" + level + "&time=" + time + "&Q_it=" + Q_it + "&Q_mt=" + Q_mt + "&wpm=" + wpm + "&accuracy=" + accuracy; //パラメータ作成
+                const point = calcPoint(score); //point
+                let para = "?score=" + score + "&level=" + level + "&point=" + point + "&time=" + time + "&Q_it=" + Q_it + "&Q_mt=" + Q_mt + "&wpm=" + wpm + "&accuracy=" + accuracy; //パラメータ作成
                 location.href = "./typing-result.html" + para; //画面遷移
             } else {
                 const word = Q[Q_No].substring(Q_i, Q_l)
@@ -86,7 +102,7 @@ function push_Keydown(event){ //メインの関数
                 const uttr = new SpeechSynthesisUtterance()
                 uttr.text = word;
                 uttr.rate = 0.9;
-                uttr.volume = 2;
+                uttr.volume = 5;
                 uttr.lang = "en-GB"//イギリス英語
                 //読み上げスタート
                 window.speechSynthesis.speak(uttr)
@@ -129,7 +145,7 @@ function calcAccuracy(right,wrong){ //正確性計算関数
 
 function calcWpm(eTime,i) { //WPM計算用関数
     let s = Math.floor((eTime % 60000) / 1000);
-    const wpm = i/s * 60;
+    const wpm = i/(s/60.0);
     return wpm.toPrecision(5);
 }
 
@@ -202,4 +218,70 @@ function calcLevel(score) { //level計算用関数
         level = "Joker";
     }
     return level;
+}
+
+function calcPoint(score) { //point計算用関数
+    let point = 0;
+    if(score <= 21){
+        point = 2;
+    } else if(score <= 38){
+        point = 2;
+    } else if(score <= 55){
+        point = 2;
+    } else if(score <= 72){
+        point = 4;
+    } else if(score <= 89){
+        point = 4;
+    } else if(score <= 106){
+        point = 4;
+    } else if(score <= 123){
+        point = 6;
+    } else if(score <= 140){
+        point = 6;
+    } else if(score <= 157){
+        point = 6;
+    } else if(score <= 174){
+        point = 8;
+    } else if(score <= 191){
+        point = 8;
+    } else if(score <= 208){
+        point = 8;
+    } else if(score <= 225){
+        point = 10;
+    } else if(score <= 242){
+        point = 10;
+    } else if(score <= 259){
+        point = 10;
+    } else if(score <= 276){
+        point = 10;
+    } else if(score <= 299){
+        point = 11;
+    } else if(score <= 324){
+        point = 12;
+    } else if(score <= 349){
+        point = 13;
+    } else if(score <= 374){
+        point = 14;
+    } else if(score <= 399){
+        point = 15;
+    } else if(score <= 449){
+        point = 16;
+    } else if(score <= 499){
+        point = 17;
+    } else if(score <= 549){
+        point = 18;
+    } else if(score <= 599){
+        point = 19;
+    } else if(score <= 649){
+        point = 20;
+    } else if(score <= 699){
+        point = 21;
+    } else if(score <= 749){
+        point = 22;
+    } else if(score <= 799){
+        point = 23;
+    } else {
+        point = 24;
+    }
+    return point;
 }
