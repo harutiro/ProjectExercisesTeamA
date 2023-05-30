@@ -73,3 +73,6 @@ button {
     font-size: 2rem;
 }
 
+.typing-game button:hover {
+    background-color: rgb(255, 255, 0);
+}
