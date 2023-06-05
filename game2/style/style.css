@@ -213,3 +213,15 @@ li p {
     display: inline-block;
     margin: 10px 10px;
 }
+
+.bold {
+    font-weight: bold;
+}
+
+.sidebar-item:hover {
+    background: #d3b833;
+}
+
+nav {
+    text-align: center;
+}
