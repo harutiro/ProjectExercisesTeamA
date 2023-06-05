@@ -17,6 +17,15 @@ input {
     background-color: #90A2BF;
 }
 
+.allPts div {
+    display: inline-block;
+    margin: 10px 10px;
+}
+
+.bold {
+    font-weight: bold;
+}
+
 .sidebar {
     background: #5D99C6;
     padding: 10px;
@@ -24,6 +33,10 @@ input {
     position: fixed;
     width: 250px;
     height: calc(100%);
+}
+
+.sidebar-item:hover {
+    background: #d3b833;
 }
 
 .todo-list {
