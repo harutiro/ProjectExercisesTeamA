@@ -15,6 +15,11 @@ function fixQuestion(question) {
     axios.get(`https://word2vec.harutiro.net/near?get_number=50&str=${question.read}`)
         .then(response => {
             if ("OK" == response.data.status) {
+                // responseデータに答えと同じ文字列、大小文字があったら削除     
+                response.data.data = response.data.data.filter((word) => {
+                    return word != question.read;
+                });
+
                 nearList.push(response.data.data[Math.floor(Math.random() * 50)]);
                 nearList.push(response.data.data[Math.floor(Math.random() * 50)])
 
