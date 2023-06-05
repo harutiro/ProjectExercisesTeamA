@@ -59,6 +59,7 @@ function init() {
             const audio = new Audio('audio/ok.mp3');
             audio.play();
             currentAnswer++;
+            addScore();
         } else {
             document.querySelector("#quiz-ans-image").src = "img/ng.png";
             const audio = new Audio('audio/ng.mp3');
@@ -74,6 +75,7 @@ function init() {
             const audio = new Audio('audio/ok.mp3');
             audio.play();
             currentAnswer++;
+            addScore();
         } else {
             document.querySelector("#quiz-ans-image").src = "img/ng.png";
             const audio = new Audio('audio/ng.mp3');
@@ -89,6 +91,7 @@ function init() {
             const audio = new Audio('audio/ok.mp3');
             audio.play();
             currentAnswer++;
+            addScore();
         } else {
             document.querySelector("#quiz-ans-image").src = "img/ng.png";
             const audio = new Audio('audio/ng.mp3');
@@ -113,13 +116,29 @@ function init() {
             document.querySelector("#question-number").innerText = "終了";
             document.querySelector("#question-text").innerText = "お疲れ様でした\n編集に戻ります";
 
-            let ptArr = getLS('pts');
-            ptArr[1] = ptArr[1] + currentAnswer;
-            setLS('pts', ptArr);
+            // バグを使ったかどうか
+            if(currentAnswer > wordList.length){
+                alert("さては、お前はバグを使ったな！\n0点にしてやる! s(・｀ヘ´・;)ゞ");
+                let ptArr = getLS('pts');
+                ptArr[0] = 0;
+                ptArr[1] = 0;
+                ptArr[2] = 0;
+                ptArr[3] = 0;
+                setLS('pts', ptArr);
+            }
+
+            
 
             currentAnswer = 0;
         }
     });
 
 
+}
+
+function addScore(){
+    let ptArr = getLS('pts');
+    ptArr[1] = ptArr[1] + 1;
+    setLS('pts', ptArr);
+    initScores();
 }
