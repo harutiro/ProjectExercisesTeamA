@@ -36,15 +36,15 @@ const janken = document.getElementById('jnkn');
 const timeattack = document.getElementById('attack');
 const typing = document.getElementById('typing');
 const total = document.getElementById('total');
-//const scoreNames = ['総合得点: ', 'クイズ: ', 'じゃんけん: ', '早押し: ', 'タイピング: ']
+const scoreNames = ['総合得点: ', 'クイズ: ', 'じゃんけん: ', '早押し: ', 'タイピング: ']
 
 // サイドバーの得点表示を更新
 function displayScores(SArr) {
-    total.innerHTML = SArr[0];
-    quiz.innerHTML = SArr[1];
-    janken.innerHTML = SArr[2];
-    timeattack.innerHTML = SArr[3];
-    typing.innerHTML = SArr[4];
+    total.innerHTML = scoreNames[0]+ SArr[0] + 'pt';
+    quiz.innerHTML = scoreNames[1]+SArr[1] + 'pt';
+    janken.innerHTML = scoreNames[2]+SArr[2] + 'pt';
+    timeattack.innerHTML = scoreNames[3]+SArr[3] + 'pt';
+    typing.innerHTML = scoreNames[4]+SArr[4] + 'pt';
 }
 
 // save array to local storage
