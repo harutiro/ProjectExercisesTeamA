@@ -98,6 +98,19 @@ cheet('c l o c k', function () {
 });
 
 cheet('↑ ↑ ↓ ↓ ← → ← → b a', function () {
+    if (konamiFlg == 0) {
+        konamiFlg = 1;
+        h1[0].textContent = '早押しタイムアタック😀';
+        ptTable[0] *= 2;
+        ptTable[1] *= 2;
+        ptTable[2] *= 2;
+    } else {
+        konamiFlg = 0;
+        h1[0].textContent = '早押しタイムアタック';
+        ptTable[0] /= 2;
+        ptTable[1] /= 2;
+        ptTable[2] /= 2;
+    }
 });
 
 startButton.addEventListener('click', startRandomSoundAndTimer);
