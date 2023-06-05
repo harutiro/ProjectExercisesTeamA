@@ -221,3 +221,7 @@ li p {
 .sidebar-item:hover {
     background: #d3b833;
 }
+
+nav {
+    text-align: center;
+}
