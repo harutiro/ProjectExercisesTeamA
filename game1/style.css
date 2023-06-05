@@ -86,3 +86,16 @@ nav {
 .sidebar-item:hover {
     background-color: #d3b833;
 }
+
+.allPts {
+    background-color: #90A2BF;
+}
+
+.allPts div {
+    display: inline-block;
+    margin: 10px 10px;
+}
+
+.bold {
+    font-weight: bold;
+}
