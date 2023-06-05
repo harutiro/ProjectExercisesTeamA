@@ -25,3 +25,7 @@ body {
 .setsumei{
     margin: 2px 3px 4px;
 }
+
+nav {
+    text-align: center;
+}
