@@ -82,3 +82,7 @@ input {
 nav {
     text-align: center;
 }
+
+.sidebar-item:hover {
+    background-color: #d3b833;
+}
