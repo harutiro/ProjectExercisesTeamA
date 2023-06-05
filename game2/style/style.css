@@ -217,3 +217,7 @@ li p {
 .bold {
     font-weight: bold;
 }
+
+.sidebar-item:hover {
+    background: #d3b833;
+}
