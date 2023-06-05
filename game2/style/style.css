@@ -213,3 +213,7 @@ li p {
     display: inline-block;
     margin: 10px 10px;
 }
+
+.bold {
+    font-weight: bold;
+}
