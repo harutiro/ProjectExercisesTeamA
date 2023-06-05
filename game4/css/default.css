@@ -69,3 +69,7 @@ input {
     align-items: center;
     justify-content: center;
 }
+
+nav {
+    text-align: center;
+}
